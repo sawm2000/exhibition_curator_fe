@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <div className="header">
-      <Link to="/art" className="header-link">
+      <Link to="/" className="header-link">
         <h1 className="exhibitArt"> exhibitArt</h1>
       </Link>
       {loggedInUser && (
