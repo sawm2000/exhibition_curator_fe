@@ -1,0 +1,47 @@
+.single-art-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #d8d1c4;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+.single-art-title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-top: 0px;
+}
+.artist {
+  font-size: 1.2em;
+  color: #4b4b4b;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.single-art-img {
+  width: 40%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+.art-details {
+  background-color: #ecebe8;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.art-details p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+.art-details strong {
+  color: #333; /* Dark color for labels */
+}

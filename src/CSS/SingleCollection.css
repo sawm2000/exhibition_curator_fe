@@ -1,0 +1,10 @@
+.delete-btn {
+  background-color: #990f00;
+  width: 20%;
+  margin: 40px auto;
+  display: block;
+  text-align: center;
+}
+.delete-btn:hover {
+  background-color: darkred;
+}

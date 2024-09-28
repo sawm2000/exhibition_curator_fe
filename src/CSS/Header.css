@@ -1,0 +1,40 @@
+.header {
+  background-color: #d8c6ab;
+  padding: 4px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.header-link {
+  text-decoration: none;
+  color: #7a653f;
+}
+.header-title {
+  font-size: 2em;
+  margin: 0;
+  transition: color 0.3s;
+}
+.header-link:hover {
+  color: #8d7851;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+.default-avatar {
+  font-size: 30px;
+  background-color: #d8d6d2;
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid #3a301f;
+}

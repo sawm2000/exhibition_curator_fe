@@ -1,0 +1,104 @@
+.art-card {
+  border: 1px solid #7e7971;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #d8d1c4;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.art-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.art-title {
+  font-size: 1em;
+  color: #36332d;
+  text-decoration: none;
+  display: block;
+  margin: 8px 0;
+  text-align: center;
+}
+.art-title:hover {
+  text-decoration: underline;
+}
+.art-artist {
+  color: #3a301f;
+  margin: 8px 0;
+  text-align: center;
+}
+.date {
+  color: #3a301f;
+  margin: 8px 0;
+  text-align: center;
+}
+.art-img {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin: 0px auto;
+  border: 1px solid #3a301f;
+}
+.like-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right: 80px;
+}
+.like-btn svg {
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+.like-btn:hover svg {
+  color: pink;
+}
+#or {
+  display: block;
+  font-weight: bold;
+  color: #555;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.add-new-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.action-buttons button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#new-name-input {
+  width: 70%;
+  margin-top: 5px;
+}
+.delete-item-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.delete-item-btn:hover {
+  background: none;
+  transform: scale(1.2);
+}
