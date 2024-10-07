@@ -1,6 +1,6 @@
 # exhibitArt Frontend
 
-The exhibitArt frontend is a user-friendly web application designed to provide users with a platform to explore, curate, and manage their artwork collections. Built using React, this application offers a responsive design and a seamless user experience.
+The exhibitArt frontend is a user-friendly web application designed to provide users with a platform to explore, curate, and manage their artwork collections. Built using React, this application offers a responsive design and a seamless user experience. It integrates with the exhibitArt backend giving users the ability to like artwork, organise collections and manage their profiles, with artwork sourced from the Harvard Art Museum API and the Metropolitan Museum of Art API.
 
 ## Table of Contents
 
