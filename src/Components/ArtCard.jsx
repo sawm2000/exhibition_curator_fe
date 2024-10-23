@@ -105,7 +105,6 @@ function ArtCard({ artPiece, onDelete, showDeleteButton }) {
       .then(() => {
         setAddSuccess(true);
         setTimeout(() => setAddSuccess(false), 5000);
-        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
