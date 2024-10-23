@@ -62,6 +62,8 @@ function SingleCollection() {
   function handleDeleteFromCollection(artId) {
     deleteFromCollection(loggedInUser._id, collectionName, artId)
       .then(() => {
+        navigate(`/collections/${collectionName}`)
+        window.location.reload()
       })
       .catch((err) => {
         setError(err.response.data.message);
