@@ -127,7 +127,7 @@ const Home = () => {
           <p id="page-num">{page}</p>
           <div className="limit-container">
           <label htmlFor="limit"></label>
-            <select id="limit" value={limit} onChange={handleLimit}>
+            <select id="limit" value={limit} onChange={handleLimit} aria-label="Select Limit">
               <option value={5}>5</option>
               <option value={10}>10</option>
               <option value={15}>15</option>
