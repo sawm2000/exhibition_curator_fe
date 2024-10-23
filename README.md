@@ -16,10 +16,10 @@ The exhibitArt frontend is a user-friendly web application designed to provide u
 
 https://exhibitart.onrender.com/
 
-You can use the following credentials to log in:
+####You can use the following credentials to log in:
 
-Username: test
-Password: test
+- Username: test
+- Password: test
 
 ## Features
 
