@@ -4,13 +4,22 @@ The exhibitArt frontend is a user-friendly web application designed to provide u
 
 ## Table of Contents
 
+- [Hosted version](#hosted-version)
 - [Features](#features)
 - [Technologies](#technologies)
 - [Prerequisites](#prerequisites)
 - [Installation and Running Locally](#installation-and-running-locally)
 - [API Integration](#api-integration)
 - [Backend Repository](#backend-repository)
-- [Hosted version](#hosted-version)
+
+## Hosted Version
+
+https://exhibitart.onrender.com/
+
+You can use the following credentials to log in:
+
+Username: test
+Password: test
 
 ## Features
 
@@ -86,7 +95,3 @@ Refer to the backend README for more details on available endpoints and their fu
 ## Backend Repository
 
 The backend code for the exhibitArt project can be found at [exhibitArt Backend Repository](https://github.com/sawm2000/exhibition_curator.git).
-
-## Hosted Version
-
-https://exhibitart.onrender.com/
