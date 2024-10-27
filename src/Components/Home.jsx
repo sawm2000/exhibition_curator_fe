@@ -84,12 +84,7 @@ const Home = () => {
           placeholder="Search by title or artist..."
           value={query}
           onChange={(e) =>
-            setSearchParams(
-              new URLSearchParams({
-                ...Object.fromEntries(searchParams),
-                query: e.target.value,
-              })
-            )
+            setQuery(e.target.value)
           }
         />
         <button type="submit">Search</button>
