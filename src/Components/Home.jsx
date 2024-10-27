@@ -69,7 +69,7 @@ const Home = () => {
 
   function handleNext() {
     const newParams = new URLSearchParams(searchParams);
-    newParams.set("page", page + 1);
+    newParams.set("page", Number(page) + 1);
     setSearchParams(newParams);
   }
 
