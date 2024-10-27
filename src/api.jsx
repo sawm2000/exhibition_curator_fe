@@ -18,6 +18,19 @@ export const searchArt = (searchQuery, sortBy, orderBy, page, limit) => {
   });
 };
 
+export const viewArt = (sortBy, orderBy, page, limit) => {
+  let endPointString = "api/art";
+  const queries = {
+    sortBy,
+    orderBy,
+    page,
+    limit,
+  };
+  return baseApi.get(endPointString, { params: queries }).then((response) => {
+    return response.data;
+  });
+};
+
 export const getSingleArt = (artId) => {
   return baseApi.get(`api/art/${artId}`).then((response) => {
     return response.data;

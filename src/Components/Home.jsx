@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { searchArt } from "../api";
+import { searchArt, viewArt } from "../api";
 import { useSearchParams } from "react-router-dom";
 import ArtCard from "./ArtCard";
 import Loading from "./Loading";
@@ -10,35 +10,48 @@ const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const [query, setQuery] = useState("");
 
-  const query = searchParams.get("query");
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("query") || "")
   const sortBy = searchParams.get("sortBy") || "title";
   const orderBy = searchParams.get("orderBy") || "asc";
   const page = searchParams.get("page") || 1;
   const limit = searchParams.get("limit") || 10;
 
   useEffect(() => {
-    setArt([]);
-    setIsLoading(true);
-    searchArt(query, sortBy, orderBy, page, limit)
-      .then((response) => {
-        setArt(response);
-        setIsLoading(false);
+    const getArt = async () => {
+      try {
+        setArt([]);
+        setIsLoading(true);
+
+        let response;
+
+        if (!searchQuery) {
+          response = await viewArt(sortBy, orderBy, page, limit);
+          } else {
+            response = await searchArt(searchQuery, sortBy, orderBy, page, limit);
+        }
+        setArt(response)
         setError("");
-      })
-      .catch((error) => {
-        console.error("Error searching art", error);
+      } catch (error) {
         setError(error.response.data.message);
-        setIsLoading(false);
-      });
-  }, [query, sortBy, orderBy, page, limit]);
+      }finally{
+        setIsLoading(false)
+      }
+    };
+
+    getArt();
+  }, [searchQuery, sortBy, orderBy, page, limit]);
 
   const handleSearch = (event) => {
     event.preventDefault();
-    const newParams = new URLSearchParams(searchParams);
-    newParams.set("query", query);
-    newParams.set("page", 1);
-    setSearchParams(newParams);
+    setSearchParams((prev) => {
+      const newParams = new URLSearchParams(prev);
+      newParams.set("query", query);
+      newParams.set("page", 1);
+      return newParams;
+    });
+    setSearchQuery(query)
   };
 
   function handleSort(event) {

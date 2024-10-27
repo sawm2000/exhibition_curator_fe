@@ -10,6 +10,7 @@ export const getArtByIds = async (artIds) => {
   return artPieces;
 };
 
+
 function Likes() {
   const { loggedInUser } = useContext(UserContext);
   const [likedArt, setLikedArt] = useState([]);
@@ -17,12 +18,20 @@ function Likes() {
 
   useEffect(() => {
     if (loggedInUser && loggedInUser.likes) {
+      const validArtIds = loggedInUser.likes.filter(id => id != null);
+      if (validArtIds.length > 0) {
       getArtByIds(loggedInUser.likes).then((art) => {
         setLikedArt(art);
         setIsLoading(false);
-      });
+      })
+      }
+      else{
+        setIsLoading(false)
+      };
     }
   }, [loggedInUser]);
+
+  
 
   return (
     <div className="likes-container">
@@ -34,7 +43,7 @@ function Likes() {
       ) : (
         <ul className="artwork-list">
           {likedArt.map((artPiece) => (
-            <ArtCard key={artPiece._id} artPiece={artPiece} />
+            <ArtCard key={artPiece.artId} artPiece={artPiece} />
           ))}
         </ul>
       )}

@@ -27,9 +27,9 @@ function ArtCard({ artPiece, onDelete, showDeleteButton }) {
 
   useEffect(() => {
     if (loggedInUser && loggedInUser.likes && artPiece) {
-      setLiked(loggedInUser.likes.includes(artPiece._id));
+      setLiked(loggedInUser.likes.includes(artPiece.artId));
     }
-  }, [loggedInUser, artPiece._id]);
+  }, [loggedInUser, artPiece.artId]);
 
   useEffect(() => {
     if (error) {
@@ -48,13 +48,13 @@ function ArtCard({ artPiece, onDelete, showDeleteButton }) {
     }
 
     if (liked) {
-      unlikeArt(loggedInUser._id, artPiece._id)
+      unlikeArt(loggedInUser._id, artPiece.artId)
         .then(() => {
           setLiked(false);
 
           const updatedUser = {
             ...loggedInUser,
-            likes: loggedInUser.likes.filter((id) => id !== artPiece._id),
+            likes: loggedInUser.likes.filter((id) => id !== artPiece.artId),
           };
           setLoggedInUser(updatedUser);
           localStorage.setItem("user", JSON.stringify(updatedUser));
@@ -63,12 +63,12 @@ function ArtCard({ artPiece, onDelete, showDeleteButton }) {
           setError(err.response.data.message);
         });
     } else {
-      likeArt(loggedInUser._id, artPiece._id)
+      likeArt(loggedInUser._id, artPiece.artId)
         .then(() => {
           setLiked(true);
           const updatedUser = {
             ...loggedInUser,
-            likes: [...loggedInUser.likes, artPiece._id],
+            likes: [...loggedInUser.likes, artPiece.artId],
           };
           setLoggedInUser(updatedUser);
           localStorage.setItem("user", JSON.stringify(updatedUser));
@@ -101,7 +101,7 @@ function ArtCard({ artPiece, onDelete, showDeleteButton }) {
     const collectionToUse = selectedCollection
       ? { collectionName: selectedCollection }
       : { collectionName: collectionName };
-    addArt(loggedInUser._id, artPiece._id, collectionToUse)
+    addArt(loggedInUser._id, artPiece.artId, collectionToUse)
       .then(() => {
         setAddSuccess(true);
         setTimeout(() => setAddSuccess(false), 5000);
@@ -113,7 +113,7 @@ function ArtCard({ artPiece, onDelete, showDeleteButton }) {
   };
 
   const handleDelete = () => {
-    onDelete(artPiece._id);
+    onDelete(artPiece.artId);
   };
 
   return (
@@ -127,7 +127,7 @@ function ArtCard({ artPiece, onDelete, showDeleteButton }) {
           <AiOutlineClose style={{ fontSize: "20px", color: "darkred" }} />
         </button>
       )}
-      <Link className="art-title" to={`/art/${artPiece._id}`}>
+      <Link className="art-title" to={`/art/${artPiece.artId}`}>
         {artPiece.title}
       </Link>
       <p className="art-artist">by: {artPiece.artist}</p>

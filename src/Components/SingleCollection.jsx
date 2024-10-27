@@ -63,7 +63,7 @@ function SingleCollection() {
     deleteFromCollection(loggedInUser._id, collectionName, artId)
       .then(() => {
         setArtworks((prevArtworks) =>
-          prevArtworks.filter((artPiece) => artPiece._id !== artId))
+          prevArtworks.filter((artPiece) => artPiece.artId !== artId))
         navigate(`/collections/${collectionName}`)
       })
       .catch((err) => {
