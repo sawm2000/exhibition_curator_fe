@@ -78,6 +78,7 @@ The frontend integrates with the ExhibitArt backend API, which provides the foll
 - **POST** `/api/auth/signin` : Authenticates a user.
 - **GET**  `/api/art/search`: Searches and sorts artworks based on query parameters.
 - **GET** `/api/art/:artId`: Retrieves details of a single artwork by ID.
+- - **GET** `/api/art`: Retrives and sorts artworks.
 - **PUT** `/api/user/:id`: Updates user details (username, email, password, img).
 - **GET** `/api/user/:id` : Retrieves user profile information.
 - **DELETE** `/api/user/:id` : Deletes a user account.
