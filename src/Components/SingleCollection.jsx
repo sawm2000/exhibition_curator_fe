@@ -80,7 +80,7 @@ function SingleCollection() {
         <ul className="artwork-list">
           {artworks.map((artPiece) => (
             <ArtCard
-              key={artPiece._id}
+              key={artPiece.artId}
               artPiece={artPiece}
               onDelete={handleDeleteFromCollection}
               showDeleteButton={true}

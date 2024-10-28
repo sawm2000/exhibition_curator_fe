@@ -23,7 +23,7 @@ function ArtCard({ artPiece, onDelete, showDeleteButton }) {
         setUserCollections(collections);
       });
     }
-  }, [loggedInUser]);
+  }, [loggedInUser, showCollections]);
 
   useEffect(() => {
     if (loggedInUser && loggedInUser.likes && artPiece) {
@@ -39,6 +39,18 @@ function ArtCard({ artPiece, onDelete, showDeleteButton }) {
       return () => clearTimeout(timer);
     }
   }, [error]);
+
+  useEffect(() => {
+    let timer;
+    
+    if (showCollections) {
+      timer = setTimeout(() => {
+        setShowCollections(false);
+      }, 6000);
+    }
+    
+    return () => clearTimeout(timer);
+  }, [showCollections]);
 
   const toggleLike = () => {
     setError(null);
@@ -104,7 +116,14 @@ function ArtCard({ artPiece, onDelete, showDeleteButton }) {
     addArt(loggedInUser._id, artPiece.artId, collectionToUse)
       .then(() => {
         setAddSuccess(true);
-        setTimeout(() => setAddSuccess(false), 5000);
+
+       setTimeout(() => {
+          setAddSuccess(false);
+        }, 3000)
+
+        setTimeout(() => {
+          setShowCollections(false);
+        }, 4000)
       })
       .catch((err) => {
         console.log(err);
